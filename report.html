@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Reporte - ProcrastinacionApp{% endblock %}
+{% block content %}
+<h2>Reporte de tareas para {{ username }}</h2>
+<ul class="list-group mb-3">
+    <li class="list-group-item">Total de tareas: <strong>{{ total }}</strong></li>
+    <li class="list-group-item">Tareas completadas: <strong>{{ completed }}</strong></li>
+    <li class="list-group-item">Tareas pendientes: <strong>{{ pending }}</strong></li>
+</ul>
+<a href="{{ url_for('panel_control') }}" class="btn btn-primary">Volver al Panel</a>
+{% endblock %}

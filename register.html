@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Registro - ProcrastinacionApp{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+    <h2 class="text-center mb-4 text-primary fw-bold">Registro</h2>
+    
+    {% if error %}
+      <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+    
+    <form method="post">
+      <div class="mb-3">
+        <label for="username" class="form-label fw-semibold">Usuario</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Ingresa tu usuario" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="********" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirm_password" class="form-label fw-semibold">Confirmar Contraseña</label>
+        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="********" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Registrar</button>
+    </form>
+
+    <hr>
+
+    <div class="text-center">
+      <p class="mb-2">¿Ya tienes cuenta?</p>
+      <button onclick="window.location.href='{{ url_for('login') }}'" 
+              class="btn btn-outline-secondary w-100">
+        Inicia sesión aquí
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

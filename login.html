@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Login - ProcrastinacionApp{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+    <h2 class="text-center mb-4 text-primary fw-bold">Iniciar sesión</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="mb-3">
+        <label for="username" class="form-label fw-semibold">Usuario</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu usuario" required autofocus>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="********" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+    </form>
+    <hr>
+    <div class="text-center">
+      <p class="mb-2">¿No estás registrado?</p>
+      <button onclick="window.location.href='{{ url_for('register') }}'" 
+              class="btn btn-outline-secondary w-100">
+        Regístrate aquí
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
